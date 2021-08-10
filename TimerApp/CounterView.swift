@@ -8,8 +8,8 @@
 import UIKit
 
 class CounterView: UIView {
-    let lbl:UILabel = UILabel()
-    let seclbl: UILabel = UILabel()
+    let timeLabel: UILabel = UILabel()
+    let secLabel: UILabel = UILabel()
     let stackView: UIStackView = UIStackView()
     let startAngle: CGFloat = CGFloat(0)
     let endAngle: CGFloat = CGFloat(Double.pi * 2)
@@ -19,26 +19,24 @@ class CounterView: UIView {
     var seconds = 1.0
     var gestureOpen = true
     var slider = UIBezierPath()
-    var outlineColor: UIColor = UIColor.white
-    var counterColor: UIColor = UIColor.lightGray
-    var sliderColor: UIColor = UIColor.black
-    var radius_size:CGFloat?
-    var centerPoint:CGPoint?
-    var ispointing = true
-    var angleend: CGFloat = CGFloat(Double.pi*3/2 + Double.pi/6) {
-          didSet{
+    var outlineColor: UIColor = UIColor(named: "Grejfrut")!
+    var counterColor: UIColor = UIColor(named: "LightGrejfrut")!
+    var sliderColor: UIColor = UIColor(named: "DarkYellow")!
+    var radiusSize: CGFloat?
+    var centerPoint: CGPoint?
+    var isPointing = true
+    var pointingAngle: CGFloat = CGFloat(Double.pi*3/2 + Double.pi/6) {
+          didSet {
               setNeedsDisplay()
           }
       }
-    var timeseconds = 1.0{
-        didSet{
-            var ltext = "01:00"
-            ltext = labeltext(num: timeseconds)
-            lbl.text = ltext
+    var timerSeconds = 1.0 {
+        didSet {
+            var timerText = "01:00"
+            timerText = labelText(num: timerSeconds)
+            timeLabel.text = timerText
         }
     }
-  
-    
    init() {
            super.init(frame: .zero)
            self.backgroundColor = .clear
@@ -50,199 +48,171 @@ class CounterView: UIView {
         }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented");
+        fatalError("init(coder:) has not been implemented")
     }
-  
-    func setupConstrains(){
+    func setupConstrains() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 10).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: 175).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-     
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
-        lbl.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -30).isActive = true
-        lbl.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
-        lbl.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
-     
-        seclbl.translatesAutoresizingMaskIntoConstraints = false
-        seclbl.leadingAnchor.constraint(equalTo: lbl.trailingAnchor).isActive = true
-        seclbl.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
-        seclbl.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        seclbl.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
-         
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        timeLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
+        timeLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -30).isActive = true
+        timeLabel.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
+        timeLabel.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
+        secLabel.translatesAutoresizingMaskIntoConstraints = false
+        secLabel.leadingAnchor.constraint(equalTo: timeLabel.trailingAnchor).isActive = true
+        secLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
+        secLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        secLabel.bottomAnchor.constraint(equalTo: stackView.bottomAnchor).isActive = true
     }
-    
-    func setupOptions(){
-        lbl.text = "01:00"
-        lbl.textAlignment = .right
-        lbl.numberOfLines = 1
-        lbl.adjustsFontSizeToFitWidth = true
-        lbl.textColor = .white
-        lbl.font  = UIFont.boldSystemFont(ofSize: 45.0)
-        seclbl.text = "sec"
-        seclbl.textColor = .white
-        seclbl.textAlignment = .left
+    func setupOptions() {
+        timeLabel.text = "01:00"
+        timeLabel.textAlignment = .right
+        timeLabel.numberOfLines = 1
+        timeLabel.adjustsFontSizeToFitWidth = true
+        timeLabel.textColor = .white
+        timeLabel.font  = UIFont.monospacedDigitSystemFont(ofSize: 53.0, weight: UIFont.Weight.semibold)
+        secLabel.text = "sec"
+        secLabel.textColor = .white
+        secLabel.textAlignment = .left
         stackView.alignment = .center
         stackView.spacing = 20
         stackView.axis = .horizontal
     }
-    
-    func setupHierarchy(){
-        
+    func setupHierarchy() {
         self.addSubview(stackView)
-        stackView.addSubview(lbl)
-        stackView.addSubview(seclbl)
+        stackView.addSubview(timeLabel)
+        stackView.addSubview(secLabel)
     }
-    
-    
   override func draw(_ rect: CGRect) {
-    
-    radius_size = (bounds.width - CGFloat(10))/2
-    centerPoint = CGPoint(x: (bounds.width - CGFloat(5)) / 2, y: (bounds.height - CGFloat(5)) / 2)
+    radiusSize = (bounds.width - CGFloat(14))/2
+    centerPoint = CGPoint(x: (bounds.width) / 2, y: (bounds.height) / 2)
 
     let path = UIBezierPath(
       arcCenter: centerPoint!,
-      radius: radius_size! - arcWidth/2,
+      radius: radiusSize! - arcWidth/2,
       startAngle: startAngle,
       endAngle: endAngle,
       clockwise: true)
     path.lineWidth = arcWidth
     counterColor.setStroke()
     path.stroke()
-    
     slider = UIBezierPath(
         arcCenter: centerPoint!,
-        radius: radius_size! - arcWidth/2,
+        radius: radiusSize! - arcWidth/2,
         startAngle: angle,
-        endAngle: angleend ,
+        endAngle: pointingAngle ,
         clockwise: true
         )
     sliderColor.setStroke()
     slider.lineWidth = 50
     slider.stroke()
-  
-    if ispointing{
+    if isPointing {
     drawPointer()
     }
-      for i in 1...12 {
+      for iter in 1...12 {
         let line = UIBezierPath()
-        drawLine(context: line, center: centerPoint!, radius: radius_size!, angle: CGFloat((Double(i))*(.pi/6)))
+        drawLine(context: line, center: centerPoint!, radius: radiusSize!, angle: CGFloat((Double(iter))*(.pi/6)))
       }
     }
-    
     func drawLine(context: UIBezierPath, center: CGPoint, radius: CGFloat, angle: CGFloat) {
-        //context.move(to: center)
-        context.move(to: CGPoint(x: centerPoint!.x + (radius_size!-arcWidth+7) * cos(angle), y: centerPoint!.y - (radius_size!-arcWidth+7) * sin(angle)))
-        context.addLine(to: CGPoint(x: centerPoint!.x + (radius_size!-7) * cos(angle), y: centerPoint!.y - (radius_size!-7) * sin(angle)))
+        context.move(to: CGPoint(x: centerPoint!.x + (radiusSize!-arcWidth+7) * cos(angle), y: centerPoint!.y - (radiusSize!-arcWidth+7) * sin(angle)))
+        context.addLine(to: CGPoint(x: centerPoint!.x + (radiusSize!-7) * cos(angle), y: centerPoint!.y - (radiusSize!-7) * sin(angle)))
         context.lineWidth = 5.0
         outlineColor.setStroke()
         context.stroke()
     }
-    
-    func drawPointer(){
+    func drawPointer() {
         let pointer = UIBezierPath()
-        pointer.move(to: CGPoint(x: centerPoint!.x + (radius_size!-arcWidth-6) * sin(angleend+CGFloat(Double.pi/2)), y: centerPoint!.y - (radius_size!-arcWidth-6) * cos(angleend+CGFloat(Double.pi/2))))
-        pointer.addLine(to: CGPoint(x: centerPoint!.x + (radius_size!+6) * sin(angleend+CGFloat(Double.pi/2)), y: centerPoint!.y - (radius_size!+6) * cos(angleend+CGFloat(Double.pi/2))))
+        let size = radiusSize!-arcWidth-6
+        pointer.move(to: CGPoint(x: centerPoint!.x + (size) * sin(pointingAngle+CGFloat(Double.pi/2)), y: centerPoint!.y - (size) * cos(pointingAngle+CGFloat(Double.pi/2))))
+        pointer.addLine(to: CGPoint(x: centerPoint!.x + (radiusSize!+6) * sin(pointingAngle+CGFloat(Double.pi/2)), y: centerPoint!.y - (radiusSize!+6) * cos(pointingAngle+CGFloat(Double.pi/2))))
         pointer.lineWidth = 15.0
         sliderColor.setStroke()
         pointer.stroke()
     }
-    
-    func drawTimerLine(oldPath: UIBezierPath, andAngle: CGFloat){
+    func drawTimerLine(oldPath: UIBezierPath, andAngle: CGFloat) {
         let timerLine = UIBezierPath(
             arcCenter: centerPoint!,
-            radius: radius_size! - arcWidth/2,
+            radius: radiusSize! - arcWidth/2,
             startAngle: angle,
-            endAngle: angleend ,
+            endAngle: pointingAngle ,
             clockwise: true
             )
         sliderColor.setStroke()
         timerLine.lineWidth = 50
         timerLine.stroke()
     }
-    
-    func labeltext(num: Double) -> String {
+    func labelText(num: Double) -> String {
         var number = num
         var text = ""
-        number = number + 0.0001
-        if Int(floor(number)) < 10
-        {
-            if (Int(round(number*100))-Int(floor(number))*100) == 0
-            {
-            text = "0"+String(Int(floor(number)))+":" + String(Int(round(number*100))-Int(floor(number))*100) + "0"
-                if (Int(round(number*100))-Int(floor(number))*100) < 10 && (Int(round(number*100))-Int(floor(number))*100) > 0{
-                    text = "0"+String(Int(floor(number)))+":0" + String(Int(round(number*100))-Int(floor(number))*100) + "0"
+        number += 0.0001
+        let convertedNumber = Int(round(number*100))-Int(floor(number))*100
+        if Int(floor(number)) < 10 {
+            if (convertedNumber) == 0 {
+            text = "0"+String(Int(floor(number)))+":" + String(convertedNumber) + "0"
+                if (convertedNumber) < 10 && (convertedNumber) > 0 {
+                    text = "0"+String(Int(floor(number)))+":0" + String(convertedNumber) + "0"
+                }
+            } else {
+            text = "0"+String(Int(floor(number)))+":" + String(convertedNumber)
+                if (convertedNumber) < 10 && (convertedNumber) > 0 {
+                    text = "0"+String(Int(floor(number)))+":0" + String(convertedNumber)
                 }
             }
-            else
-            {
-            text = "0"+String(Int(floor(number)))+":" + String(Int(round(number*100))-Int(floor(number))*100)
-                if (Int(round(number*100))-Int(floor(number))*100) < 10 && (Int(round(number*100))-Int(floor(number))*100) > 0 {
-                    text = "0"+String(Int(floor(number)))+":0" + String(Int(round(number*100))-Int(floor(number))*100)
+        } else {
+            if (convertedNumber) == 0 {
+            text = String(Int(floor(number)))+":" + String(convertedNumber) + "0"
+                if (convertedNumber) < 10 && (convertedNumber) > 0 {
+                    text = String(Int(floor(number)))+":0" + String(convertedNumber) + "0"
                 }
-            }
-        }
-        else
-        {
-            if (Int(round(number*100))-Int(floor(number))*100) == 0
-            {
-            text = String(Int(floor(number)))+":" + String(Int(round(number*100))-Int(floor(number))*100) + "0"
-                if (Int(round(number*100))-Int(floor(number))*100) < 10 && (Int(round(number*100))-Int(floor(number))*100) > 0 {
-                    text = String(Int(floor(number)))+":0" + String(Int(round(number*100))-Int(floor(number))*100) + "0"
-                }
-            }
-            else{
-            text = String(Int(floor(number)))+":" + String(Int(round(number*100))-Int(floor(number))*100)
-                if (Int(round(number*100))-Int(floor(number))*100) < 10 && (Int(round(number*100))-Int(floor(number))*100) > 0 {
-                    text = String(Int(floor(number)))+":0" + String(Int(round(number*100))-Int(floor(number))*100)
+            } else {
+            text = String(Int(floor(number)))+":" + String(convertedNumber)
+                if (convertedNumber) < 10 && (convertedNumber) > 0 {
+                    text = String(Int(floor(number)))+":0" + String(convertedNumber)
                 }
             }
         }
         return text
     }
-    
-    
-    
-    
     @objc private func handleGesture(_ gesture: RotationGestureRecognizer) {
-      if gestureOpen{
-        if gesture.touchAngle > 0
-        {
-            angleend = gesture.touchAngle
+      var angleGesture: CGFloat = pointingAngle
+      var tim = 1.0
+      var sec = 1.0
+      if gestureOpen {
+        if gesture.touchAngle > 0 {
+            angleGesture = gesture.touchAngle
+        } else {
+            angleGesture =  CGFloat(Double.pi) + (CGFloat(Double.pi) + gesture.touchAngle)
         }
-        else{
-            angleend =  CGFloat(Double.pi) + (CGFloat(Double.pi) + gesture.touchAngle)
+        if angleGesture > CGFloat(Double.pi * 3/2) && angleGesture < CGFloat(Double.pi * 3/2 + Double.pi/6) {
+            angleGesture = CGFloat(Double.pi * 3/2 + Double.pi/6)
+            tim = 1
+            sec = 1
+        } else if angleGesture > CGFloat(Double.pi * 3/2 + Double.pi/6) && angleGesture < CGFloat(Double.pi * 2) {
+            angleGesture -=  angleGesture.remainder(dividingBy: (CGFloat(Double.pi)/6))
+            tim = 3 * ((Double(angleGesture) - (Double.pi/2 * 3)) / (Double.pi/2))
+            sec = 3 * ((Double(angleGesture) - (Double.pi/2 * 3)) / (Double.pi/2))
+        } else if angleGesture > CGFloat(0) && angleGesture < CGFloat(Double.pi + Double.pi * 5/12) {
+            angleGesture -=  angleGesture.remainder(dividingBy: (CGFloat(Double.pi)/6))
+            tim = 3 + 9 * (Double(angleGesture)  / (Double.pi * 3/2))
+            sec = 3 + 9 * (Double(angleGesture)  / (Double.pi * 3/2))
+        } else if angleGesture > CGFloat(Double.pi + Double.pi * 5/12) && angleGesture <= CGFloat(Double.pi * 3/2) {
+            angleGesture = CGFloat(Double.pi * 3/2 - 0.001)
+            tim = 12
+            sec = 12
         }
-        if angleend > CGFloat(Double.pi * 3/2) && angleend < CGFloat(Double.pi * 3/2 + Double.pi/6)
-        {
-            angleend = CGFloat(Double.pi * 3/2 + Double.pi/6)
-            timeseconds = 1
-            seconds = 1
+        if pointingAngle > CGFloat(Double.pi * 3/2) && angleGesture > CGFloat(0) && angleGesture < CGFloat(Double.pi * 3/2) {
+        } else if pointingAngle < CGFloat(Double.pi * 3/2) && pointingAngle > CGFloat(Double.pi) && angleGesture > CGFloat(Double.pi * 3/2) && angleGesture > CGFloat(0) {
+        } else {
+            pointingAngle = angleGesture
+            timerSeconds = tim
+            seconds = sec
         }
-        else if angleend > CGFloat(Double.pi * 3/2 + Double.pi/6) && angleend < CGFloat(Double.pi * 2)
-        {
-            angleend = angleend - angleend.remainder(dividingBy: (CGFloat(Double.pi)/6))
-            timeseconds = 3 * ((Double(angleend) - (Double.pi/2 * 3)) / (Double.pi/2))
-            seconds = 3 * ((Double(angleend) - (Double.pi/2 * 3)) / (Double.pi/2))
-        }
-        else if angleend > CGFloat(0) && angleend < CGFloat(Double.pi + Double.pi * 5/12)
-        {
-            angleend = angleend - angleend.remainder(dividingBy: (CGFloat(Double.pi)/6))
-            timeseconds = 3 + 9 * (Double(angleend)  / (Double.pi * 3/2))
-            seconds = 3 + 9 * (Double(angleend)  / (Double.pi * 3/2))
-        }
-        else if angleend > CGFloat(Double.pi + Double.pi * 5/12) && angleend <= CGFloat(Double.pi * 3/2)
-        {
-            angleend = CGFloat(Double.pi * 3/2 - 0.001)
-            timeseconds = 12
-            seconds = 12
-        }
-        
       }
     }
-    
     class RotationGestureRecognizer: UIPanGestureRecognizer {
         private(set) var touchAngle: CGFloat = 0
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
@@ -276,8 +246,4 @@ class CounterView: UIView {
           minimumNumberOfTouches = 1
         }
     }
-    
-    
-  
-    
 }

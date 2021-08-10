@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71BF6D2EE6899A1216DC2083 /* Pods_TimerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59A673DC5CAD7788A96C873 /* Pods_TimerApp.framework */; };
 		9098D30C26B93C5D00F78CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098D30B26B93C5D00F78CC0 /* AppDelegate.swift */; };
 		9098D30E26B93C5D00F78CC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098D30D26B93C5D00F78CC0 /* SceneDelegate.swift */; };
 		9098D31026B93C5D00F78CC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098D30F26B93C5D00F78CC0 /* ViewController.swift */; };
@@ -15,6 +16,8 @@
 		9098D32326B93C6100F78CC0 /* TimerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098D32226B93C6100F78CC0 /* TimerAppTests.swift */; };
 		9098D32E26B93C6100F78CC0 /* TimerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098D32D26B93C6100F78CC0 /* TimerAppUITests.swift */; };
 		9098D33C26BD233300F78CC0 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098D33B26BD233300F78CC0 /* CounterView.swift */; };
+		AF2F8CA24B0D93C0352E041E /* Pods_TimerApp_TimerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D8A4F4E18EB057C2B94F5B /* Pods_TimerApp_TimerAppUITests.framework */; };
+		B705FC22F1714CFF5D610F10 /* Pods_TimerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FCDF4ED1D3C0E6E85F5044 /* Pods_TimerAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16D8A4F4E18EB057C2B94F5B /* Pods_TimerApp_TimerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimerApp_TimerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		231000975C181BA7E125CFE0 /* Pods-TimerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerAppTests.release.xcconfig"; path = "Target Support Files/Pods-TimerAppTests/Pods-TimerAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F8F0CF16E05E1B081EC669B /* Pods-TimerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerApp.debug.xcconfig"; path = "Target Support Files/Pods-TimerApp/Pods-TimerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		67FCDF4ED1D3C0E6E85F5044 /* Pods_TimerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A069E99AD4E0D2611EEB596 /* Pods-TimerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TimerAppTests/Pods-TimerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		84B2F97AA4D5C30015F048F0 /* Pods-TimerApp-TimerAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerApp-TimerAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TimerApp-TimerAppUITests/Pods-TimerApp-TimerAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9098D30826B93C5D00F78CC0 /* TimerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9098D30B26B93C5D00F78CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9098D30D26B93C5D00F78CC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +58,9 @@
 		9098D32D26B93C6100F78CC0 /* TimerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAppUITests.swift; sourceTree = "<group>"; };
 		9098D32F26B93C6100F78CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9098D33B26BD233300F78CC0 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		C4C5BE75758150C80D7133BD /* Pods-TimerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerApp.release.xcconfig"; path = "Target Support Files/Pods-TimerApp/Pods-TimerApp.release.xcconfig"; sourceTree = "<group>"; };
+		EA9822593BDEB226DBE7C924 /* Pods-TimerApp-TimerAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerApp-TimerAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TimerApp-TimerAppUITests/Pods-TimerApp-TimerAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F59A673DC5CAD7788A96C873 /* Pods_TimerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71BF6D2EE6899A1216DC2083 /* Pods_TimerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B705FC22F1714CFF5D610F10 /* Pods_TimerAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF2F8CA24B0D93C0352E041E /* Pods_TimerApp_TimerAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				9098D32126B93C6100F78CC0 /* TimerAppTests */,
 				9098D32C26B93C6100F78CC0 /* TimerAppUITests */,
 				9098D30926B93C5D00F78CC0 /* Products */,
+				9BF41C68D995D646B7E435DA /* Pods */,
+				CD12BBC23546E0D13C0C7E08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,29 @@
 			path = TimerAppUITests;
 			sourceTree = "<group>";
 		};
+		9BF41C68D995D646B7E435DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F8F0CF16E05E1B081EC669B /* Pods-TimerApp.debug.xcconfig */,
+				C4C5BE75758150C80D7133BD /* Pods-TimerApp.release.xcconfig */,
+				EA9822593BDEB226DBE7C924 /* Pods-TimerApp-TimerAppUITests.debug.xcconfig */,
+				84B2F97AA4D5C30015F048F0 /* Pods-TimerApp-TimerAppUITests.release.xcconfig */,
+				7A069E99AD4E0D2611EEB596 /* Pods-TimerAppTests.debug.xcconfig */,
+				231000975C181BA7E125CFE0 /* Pods-TimerAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD12BBC23546E0D13C0C7E08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F59A673DC5CAD7788A96C873 /* Pods_TimerApp.framework */,
+				16D8A4F4E18EB057C2B94F5B /* Pods_TimerApp_TimerAppUITests.framework */,
+				67FCDF4ED1D3C0E6E85F5044 /* Pods_TimerAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +175,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9098D33226B93C6100F78CC0 /* Build configuration list for PBXNativeTarget "TimerApp" */;
 			buildPhases = (
+				9098D33D26C1785100F78CC0 /* Run Script */,
+				0A0226391A97A7C02DABE22A /* [CP] Check Pods Manifest.lock */,
 				9098D30426B93C5D00F78CC0 /* Sources */,
 				9098D30526B93C5D00F78CC0 /* Frameworks */,
 				9098D30626B93C5D00F78CC0 /* Resources */,
@@ -152,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9098D33526B93C6100F78CC0 /* Build configuration list for PBXNativeTarget "TimerAppTests" */;
 			buildPhases = (
+				34A4D0E8AACA97B278589DFA /* [CP] Check Pods Manifest.lock */,
 				9098D31A26B93C6100F78CC0 /* Sources */,
 				9098D31B26B93C6100F78CC0 /* Frameworks */,
 				9098D31C26B93C6100F78CC0 /* Resources */,
@@ -170,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9098D33826B93C6100F78CC0 /* Build configuration list for PBXNativeTarget "TimerAppUITests" */;
 			buildPhases = (
+				91A5E55E8DA5C078E39D61DB /* [CP] Check Pods Manifest.lock */,
 				9098D32526B93C6100F78CC0 /* Sources */,
 				9098D32626B93C6100F78CC0 /* Frameworks */,
 				9098D32726B93C6100F78CC0 /* Resources */,
@@ -251,6 +295,93 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A0226391A97A7C02DABE22A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34A4D0E8AACA97B278589DFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimerAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9098D33D26C1785100F78CC0 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		91A5E55E8DA5C078E39D61DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimerApp-TimerAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9098D30426B93C5D00F78CC0 /* Sources */ = {
@@ -425,6 +556,7 @@
 		};
 		9098D33326B93C6100F78CC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F8F0CF16E05E1B081EC669B /* Pods-TimerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,6 +575,7 @@
 		};
 		9098D33426B93C6100F78CC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4C5BE75758150C80D7133BD /* Pods-TimerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -461,6 +594,7 @@
 		};
 		9098D33626B93C6100F78CC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A069E99AD4E0D2611EEB596 /* Pods-TimerAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -482,6 +616,7 @@
 		};
 		9098D33726B93C6100F78CC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 231000975C181BA7E125CFE0 /* Pods-TimerAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -503,6 +638,7 @@
 		};
 		9098D33926B93C6100F78CC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA9822593BDEB226DBE7C924 /* Pods-TimerApp-TimerAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +658,7 @@
 		};
 		9098D33A26B93C6100F78CC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84B2F97AA4D5C30015F048F0 /* Pods-TimerApp-TimerAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
