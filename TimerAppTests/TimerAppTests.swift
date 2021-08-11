@@ -9,7 +9,6 @@ import XCTest
 @testable import TimerApp
 
 class TimerAppTests: XCTestCase {
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -18,9 +17,12 @@ class TimerAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_if_textLabel_has_always_5_signs() throws {
+        let circle = CounterView()
+        for iter in 1...1200 {
+        circle.timerSeconds = Double(iter/100)
+        XCTAssertEqual(circle.timeLabel.text!.count, 5)
+        }
     }
 
     func testPerformanceExample() throws {
